@@ -1,0 +1,7 @@
+/* Add mobile styles for the component here.  */
+StackLayout{
+    position: relative;
+    width: 100%;
+    orientation: "vertical";
+    background-color: "lightgray";
+}

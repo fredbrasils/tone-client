@@ -1,0 +1,43 @@
+<div *ngFor="let luthier of luthiers">
+    <div class="row justify-content-center col-12">
+        <div class="twPc-div">
+            <a class="twPc-bg twPc-block" [style.background-image]="getBackground(luthier.imgBackground)"></a>
+            <div>
+                <a title="Jerry" class="twPc-avatarLink twPc-avatarImg"
+                    [style.background-image]="getBackground(luthier.imgProfile)"></a>
+                <div class="twPc-divUser">
+                    <div class="twPc-divName">
+                        <a>{{luthier.name}}</a>
+                    </div>
+                </div>
+
+                <div class="divStats">
+                    <div class="divArrange div30">
+                        <div class="twPc-ArrangeSizeFit">
+                            <a href="https://twitter.com/mertskaplan/followers" title="1.810 Followers">
+                                <span class="twPc-StatLabel twPc-block">Followers</span>
+                                <span class="twPc-StatValue">{{luthier.followers}}</span>
+                            </a>
+                        </div>
+
+                        <div class="twPc-ArrangeSizeFit">
+                            <a href="https://twitter.com/mertskaplan/followers" title="1.810 Followers">
+                                <span class="twPc-StatLabel twPc-block">Photo</span>
+                                <span class="twPc-StatValue">{{luthier.photos}}</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="divArrange div70">
+                        <div *ngFor="let instrument of luthier.instruments">
+                            <a class="circle-link" title="Electric guitar">
+                                <img src="{{instrument}}" alt="Electric guitar"
+                                    width="21.813" height="23.453" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

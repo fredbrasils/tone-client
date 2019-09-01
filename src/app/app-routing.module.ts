@@ -1,8 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LuthierListComponent } from './luthier/luthier-list/luthier-list.component';
 
 
-const routes: Routes = [];
+export const routes: Routes = [
+  {
+      path: '',
+      redirectTo: '/luthier-list',
+      pathMatch: 'full',
+  },
+  {
+      path: 'luthier-list',
+      component: LuthierListComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

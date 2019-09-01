@@ -24,9 +24,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/app/css/bootstrap.css",
+              "src/app/css/bootstrap-grid.css",
+              "src/app/css/bootstrap-reboot.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/js/bootstrap.bundle.js",
+              "src/app/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -120,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tone-client"
+    }
+  },
+  "defaultProject": "tone-client",
+  "cli": {
+    "defaultCollection": "@nativescript/schematics"
+  }
 }
