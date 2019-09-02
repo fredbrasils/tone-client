@@ -11,7 +11,8 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browse
 })
 export class LuthierListComponent implements OnInit {
 
-  luthiers : Luthier[]; 
+  luthiers : LuthierList[] = []; 
+  detail:boolean;
 
   constructor(private luthierService : LuthierService, private _sanitizer: DomSanitizer) { }
 
@@ -20,11 +21,23 @@ export class LuthierListComponent implements OnInit {
   }
 
   getAllLuthiers() {
-    this.luthiers = this.luthierService.getAllLuthiers();
+    this.luthierService.getAllLuthiers().forEach((obj, key) => {
+      let luthier = new LuthierList();
+      luthier.luthier = obj;
+      this.luthiers.push(luthier);
+    });
   }
 
   getBackground(img){
     return this._sanitizer.bypassSecurityTrustStyle(`url(${img})`);
   }
 
+  showDetail(lut:LuthierList){
+    lut.detail=!lut.detail;
+  }
+}
+
+class LuthierList{
+    luthier:Luthier;
+    detail:boolean;
 }

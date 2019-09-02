@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {LuthierService} from '../shared/service/luthier.service';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { Luthier } from '../shared/model/luthier';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-luthier',
@@ -9,18 +13,28 @@ import {LuthierService} from '../shared/service/luthier.service';
 })
 export class LuthierComponent implements OnInit {
 
-  @Input() 
-  plataformName:String;
-  msg:String;
-  
-  constructor(private luthierService : LuthierService) { }
+  luthier:Luthier;
+
+  constructor(private route: ActivatedRoute,
+              private luthierService : LuthierService,
+              private location: Location,
+              private _sanitizer: DomSanitizer) { }
 
   ngOnInit() {
-   // this.plataform();
+    this.getLuthier();
   }
-/*
-  plataform() {
-    this.msg = this.luthierService.getPlataform(this.plataformName);
-  }*/
- 
+
+  getLuthier(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.luthierService.getAllLuthiers().forEach((obj, key) => {
+      if(obj.id === id){
+        this.luthier = obj;
+      }
+    });
+  }
+
+  getBackground(img){
+    return this._sanitizer.bypassSecurityTrustStyle(`url(${img})`);
+  }
+
 }

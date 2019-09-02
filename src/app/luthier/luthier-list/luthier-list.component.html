@@ -1,13 +1,13 @@
-<div *ngFor="let luthier of luthiers">
+<div *ngFor="let lut of luthiers">
     <div class="row justify-content-center col-12">
-        <div class="twPc-div">
-            <a class="twPc-bg twPc-block" [style.background-image]="getBackground(luthier.imgBackground)"></a>
+        <div [class.twPc-div]="true" [class.show-detail]="lut.detail" (click)="showDetail(lut)">
+            <a class="twPc-bg twPc-block" [style.background-image]="getBackground(lut.luthier.imgBackground)"></a>
             <div>
                 <a title="Jerry" class="twPc-avatarLink twPc-avatarImg"
-                    [style.background-image]="getBackground(luthier.imgProfile)"></a>
+                    [style.background-image]="getBackground(lut.luthier.imgProfile)"></a>
                 <div class="twPc-divUser">
                     <div class="twPc-divName">
-                        <a>{{luthier.name}}</a>
+                        <a>{{lut.luthier.name}}</a>
                     </div>
                 </div>
 
@@ -16,23 +16,22 @@
                         <div class="twPc-ArrangeSizeFit">
                             <a href="https://twitter.com/mertskaplan/followers" title="1.810 Followers">
                                 <span class="twPc-StatLabel twPc-block">Followers</span>
-                                <span class="twPc-StatValue">{{luthier.followers}}</span>
+                                <span class="twPc-StatValue">{{lut.luthier.followers}}</span>
                             </a>
                         </div>
 
                         <div class="twPc-ArrangeSizeFit">
                             <a href="https://twitter.com/mertskaplan/followers" title="1.810 Followers">
                                 <span class="twPc-StatLabel twPc-block">Photo</span>
-                                <span class="twPc-StatValue">{{luthier.photos}}</span>
+                                <span class="twPc-StatValue">{{lut.luthier.photos}}</span>
                             </a>
                         </div>
                     </div>
 
                     <div class="divArrange div70">
-                        <div *ngFor="let instrument of luthier.instruments">
+                        <div *ngFor="let instrument of lut.luthier.instruments">
                             <a class="circle-link" title="Electric guitar">
-                                <img src="{{instrument}}" alt="Electric guitar"
-                                    width="21.813" height="23.453" />
+                                <img src="{{instrument}}" alt="Electric guitar" width="21.813" height="23.453" />
                             </a>
                         </div>
                     </div>
@@ -40,4 +39,42 @@
             </div>
         </div>
     </div>
+
+    <div class="row justify-content-center col-12">
+        <div [class.luthier-resume]="true" [class.show]="lut.detail">
+            <div class="py-2 px-4">
+                <div class="py-4">
+                    <h5 class="mb-3">Description</h5>
+                    <div class="p-4 bg-light rounded shadow-sm">
+                        <p class="font-italic mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h5 class="mb-0">Recent photos</h5><!-- a href="#" class="btn btn-link text-muted">Show all</a -->
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 mb-2 pr-lg-1"><img
+                            src="https://res.cloudinary.com/mhmd/image/upload/v1556294928/nicole-honeywill-546848-unsplash_ymprvp.jpg"
+                            alt="" class="img-fluid rounded shadow-sm"></div>
+                    <div class="col-lg-6 mb-2 pl-lg-1"><img
+                            src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/dose-juice-1184444-unsplash_bmbutn.jpg"
+                            alt="" class="img-fluid rounded shadow-sm"></div>
+                    <div class="col-lg-6 pr-lg-1 mb-2"><img
+                            src="https://res.cloudinary.com/mhmd/image/upload/v1556294926/cody-davis-253925-unsplash_hsetv7.jpg"
+                            alt="" class="img-fluid rounded shadow-sm"></div>
+                    <div class="col-lg-6 pl-lg-1"><img
+                            src="https://res.cloudinary.com/mhmd/image/upload/v1556294928/tim-foster-734470-unsplash_xqde00.jpg"
+                            alt="" class="img-fluid rounded shadow-sm"></div>
+                </div>
+                
+                <div>
+                    <button type="button" class="more-info mt-2 mb-2 btn" 
+                        routerLink="/luthier-detail/{{lut.luthier.id}}">More Info</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
 </div>

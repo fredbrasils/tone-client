@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { NativeScriptRouterModule } from 'nativescript-angular/router';
 import { Routes } from '@angular/router';
-
+import { LuthierComponent } from '@src/app/luthier/luthier.component';
 import { LuthierListComponent } from '@src/app/luthier/luthier-list/luthier-list.component';
 
 export const routes: Routes = [
@@ -14,6 +14,10 @@ export const routes: Routes = [
       path: 'luthier-list',
       component: LuthierListComponent,
   },
+  {
+    path: 'luthier-detail/:id',
+    component: LuthierComponent,
+  }
 ];
 
 

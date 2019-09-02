@@ -1,12 +1,14 @@
-
 .twPc-div {
     background: #fff none repeat scroll 0 0;
-    border: 1px solid #e1e8ed;
+    border: 0px solid #e1e8ed;
     border-radius: 6px;
-    max-width: 400px; /*340*/
+    max-width: 400px;
+    /*340*/
     width: 100%;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
+    transition: all 1.5s ease-in;
 }
+
 .twPc-bg {
     background-position: 0 50%;
     background-size: 100% auto;
@@ -15,9 +17,11 @@
     height: 95px;
     width: 100%;
 }
+
 .twPc-block {
     display: block !important;
 }
+
 /*
 .twPc-button {
     margin: -35px -10px 0;
@@ -25,6 +29,7 @@
     width: 100%;
 }
 */
+
 .twPc-avatarLink {
     background-color: #fff;
     border-radius: 6px;
@@ -35,6 +40,7 @@
     padding: 1px;
     vertical-align: bottom;
 }
+
 /*
 .twPc-avatarLink-left {
     background-color: #fff;
@@ -58,9 +64,11 @@
     color: inherit !important;
 }
 */
+
 .twPc-avatarImg {
     /*background-image: url("../../../assets/img/background/profile.jpg");
-    */background-position: 0 50%;
+    */
+    background-position: 0 50%;
     background-size: 100% auto;
     border: 2px solid #fff;
     border-radius: 7px;
@@ -69,24 +77,27 @@
     height: 72px;
     width: 72px;
 }
+
 .twPc-divUser {
     margin: 5px 0 0;
 }
+
 .twPc-divName {
     font-size: 18px;
     font-weight: 700;
     line-height: 45px;
 }
+
 .twPc-divName a {
     color: inherit !important;
 }
 
-.divStats{
+.divStats {
     display: flex;
     flex-direction: row;
 }
 
-.divArrange{
+.divArrange {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -95,11 +106,11 @@
     justify-content: space-between;
 }
 
-.div30{
+.div30 {
     width: 40%;
 }
 
-.div70{
+.div70 {
     width: 60%;
     justify-content: flex-end;
 }
@@ -121,6 +132,7 @@
     font-weight: 500;
     transition: color 0.15s ease-in-out 0s;
 }
+
 .twPc-StatLabel {
     color: #8899a6;
     font-size: 10px;
@@ -129,7 +141,6 @@
     text-transform: uppercase;
     transition: color 0.15s ease-in-out 0s;
 }
-
 
 .circle-link {
     height: 35px;
@@ -141,12 +152,49 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    /*cursor: pointer;*/
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: 1s ease-out;
-  }
+}
 
-  .circle-link:hover {
+.circle-link:hover {
     transform: translateY(-0.25rem);
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-  }
+}
+
+/**************/
+
+.luthier-resume {
+    height: 0;
+    overflow: hidden;
+    background-color: #fff;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    max-width: 400px;
+    width: 100%;
+    transition: height 1s ease-out;
+}
+
+.show {
+    height: 602px;
+    transition: height 1s ease-out;
+}
+
+.show-detail {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #f8f9fa;
+    transition: all 0.1s ease-out;
+}
+
+.more-info{
+    width: 100%;
+    border-radius: 0;
+    border: solid 1px black;
+    background-color: rgba(229, 224, 224, 0.3);
+}
+
+.more-info:hover{
+    background-color: rgba(229, 224, 224, 0.5);
+    box-shadow: 0 0 5px;
+}
