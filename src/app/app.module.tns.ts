@@ -5,6 +5,9 @@ import { AppRoutingModule } from '@src/app/app-routing.module.tns';
 import { AppComponent } from '@src/app/app.component';
 import { LuthierComponent } from '@src/app/luthier/luthier.component';
 import { LuthierListComponent } from '@src/app/luthier/luthier-list/luthier-list.component';
+import { DefaultLayoutComponent } from '@src/app/admin/default-layout/default-layout.component';
+import { DashboardComponent } from '@src/app/admin/views/dashboard/dashboard.component';
+import { InstrumentComponent } from '@src/app/admin/views/instrument/instrument.component';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -18,6 +21,9 @@ import { LuthierListComponent } from '@src/app/luthier/luthier-list/luthier-list
     AppComponent,
     LuthierComponent,
     LuthierListComponent,
+    DefaultLayoutComponent,
+    DashboardComponent,
+    InstrumentComponent,
   ],
   imports: [
     NativeScriptModule,

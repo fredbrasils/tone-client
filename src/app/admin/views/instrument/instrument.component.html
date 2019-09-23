@@ -1,0 +1,74 @@
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Enter name" [(ngModel)]="instrument.name">
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-info" (click)="add()"> + </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-tools">
+                        <div class="input-group input-group-sm">
+                            <div class="custom-control custom-checkbox mr-3">
+                                <input class="custom-control-input" type="checkbox" id="customCheckbox2" checked>
+                                <label for="customCheckbox2" class="custom-control-label">Show active</label>
+                            </div>
+
+                            <div class="custom-control custom-checkbox mr-3">
+                                <input class="custom-control-input" type="checkbox" id="customCheckbox3" checked>
+                                <label for="customCheckbox3" class="custom-control-label">Show inactive</label>
+                            </div>
+
+                            <input type="text" name="table_search" class="form-control float-right"
+                                placeholder="Search">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+
+                <div class="card-body table-responsive p-0" style="height: 300px;">
+                    <table class="table table-head-fixed">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let ins of instruments">
+                            <tr>
+                                <td>{{ins.name}}</td>
+                                <td>{{getStatus(ins.status)}}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-info">Edit</button>
+                                        <button type="button" [class.btn]="true" [class.btn-warning]="ins.status === 0" 
+                                        [class.btn-success]="ins.status === 1" (click)="activeOrInactive(ins)">
+                                            {{getStatus(ins.status === 1 ? 0 : 1)}}
+                                        </button>
+                                        <button type="button" class="btn btn-danger" (click)="remove(ins)">Remove</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+    <!-- /.row -->
+</section>

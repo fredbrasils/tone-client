@@ -25,12 +25,15 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/app/css/bootstrap.css",
-              "src/app/css/bootstrap-grid.css",
-              "src/app/css/bootstrap-reboot.css"
+              "font/css/all.min.css",
+              "overlayScrollbars/css/OverlayScrollbars.min.css",
+              "src/app/css/adminlte.min.css"
             ],
             "scripts": [
-              
+              "src/app/js/jquery.min.js",
+              "src/app/js/bootstrap.bundle.min.js",
+              "src/app/js/jquery.overlayScrollbars.min.js",
+              "src/app/js/adminlte.js"
             ]
           },
           "configurations": {
